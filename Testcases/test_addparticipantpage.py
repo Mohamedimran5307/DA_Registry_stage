@@ -7,8 +7,8 @@ from allure_commons.types import AttachmentType
 from Pageobjects.Basepage import Basepage
 from Configurations.config import Testdata
 from Pageobjects.Loginpage import Loginpage
-from Testcase.confitest import init_driver
-from Testcase.test_base import Basetest
+from Testcases.confitest import init_driver
+from Testcases.test_base import Basetest
 from Pageobjects.AddParticipant_page import Participant_page
 
 

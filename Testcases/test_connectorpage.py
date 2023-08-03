@@ -7,9 +7,9 @@ from selenium.webdriver.common.by import By
 from Pageobjects.Connectorpage import Connectorspage
 from Pageobjects.Homepage import Homepage
 from Pageobjects.Loginpage import Loginpage
-from Testcase.test_base import Basetest
+from Testcases.test_base import Basetest
 from Configurations.config import Testdata
-from Testcase.confitest import init_driver
+from Testcases.confitest import init_driver
 from selenium import webdriver
 
 from time import sleep
@@ -20,8 +20,8 @@ from allure_commons.types import AttachmentType
 
 from Configurations.config import Testdata
 from Pageobjects.Loginpage import Loginpage
-from Testcase.confitest import init_driver
-from Testcase.test_base import Basetest
+from Testcases.confitest import init_driver
+from Testcases.test_base import Basetest
 
 
 class Test_add_connector(Basetest):

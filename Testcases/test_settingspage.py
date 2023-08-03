@@ -8,8 +8,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from Configurations.config import Testdata
 from Pageobjects.Loginpage import Loginpage
 from Pageobjects.SettingsPage import SettingsPage
-from Testcase.confitest import init_driver
-from Testcase.test_base import Basetest
+from Testcases.confitest import init_driver
+from Testcases.test_base import Basetest
 from Pageobjects.AddParticipant_page import Participant_page
 
 

@@ -4,9 +4,9 @@ from selenium.webdriver.support import expected_conditions as EC
 from Pageobjects.Homepage import Homepage
 from Pageobjects.Loginpage import Loginpage
 from Pageobjects.Datasetpage import Datasetspage
-from Testcase.test_base import Basetest
+from Testcases.test_base import Basetest
 from Configurations.config import Testdata
-from Testcase.confitest import init_driver
+from Testcases.confitest import init_driver
 import allure
 import allure_pytest
 from selenium.webdriver.common.by import By
