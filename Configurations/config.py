@@ -117,7 +117,6 @@ class Testdata:
     N = 9
     ADD_DATAPOINT_ATTRIBUTES = ''.join(random.choices(string.ascii_letters, k=N))
 
-
     UPDATED_DATAPOINT_CATEGORY_NAME = "DIGITALGREEN"
 
     N = 15
@@ -210,3 +209,5 @@ class Testdata:
     UPLOAD_POLICY_FILE = "/Users/shaikmohamedimran/Desktop/CIMMYT_Data/Warranties.pdf"
 
     UPDATE_CATGEORY_NAME_FIELD = "Agricultural crops"
+
+    Rename_field_1 = "UNIQUE ID"

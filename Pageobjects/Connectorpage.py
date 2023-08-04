@@ -5,14 +5,15 @@ from Pageobjects.Basepage import Basepage
 
 """By locators"""
 
+
 class Connectorspage(Basepage):
     CONNECTOR_BUTTON = (By.ID, "navbar-connectors")
     ADD_CONNECTOR_BUTTON = (By.ID, "add-connector")
     CONNECTOR_NAME_FIELD = (By.ID, "connector-name")
     CONNECTOR_DESCRIPTION_FIELD = (By.ID, "connector-description")
     SELECT_ORGANIZATION_DROPDOWN = (By.ID, "connectors-select-orgnisation-id")
-    SELECT_ORGANIZATION_1 = (By.XPATH ,"//li[text()='Imran Agri Solutions']")
-    SELECT_ORGANIZATION_2 = (By.XPATH ,"//li[text()='Imran growers']")
+    SELECT_ORGANIZATION_1 = (By.XPATH, "//li[text()='Imran Agri Solutions']")
+    SELECT_ORGANIZATION_2 = (By.XPATH, "//li[text()='Imran growers']")
     SELECT_DATASET_DROPDOWN = (By.ID, "connectors-select-dataset-id")
     SELECT_DATASET_1 = (By.XPATH, "//li[text()='PXD 1']")
     SELECT_DATASET_2 = (By.XPATH, "//li[text()='LDI 1']")
@@ -36,7 +37,11 @@ class Connectorspage(Basepage):
     SAVE_CONNECTOR_BUTTON = (By.ID, "save-connector-button")
     DELETE_CONNECTOR_BUTTON = (By.ID, "delete-connector-button")
     CANCEL_CONNECTOR_BUTTON = (By.ID, "cancel-button")
-
+    RENAME_COLUMN_FIELD = (By.XPATH, "//span[text()='New column name']")
+    RENAME_COLUMN_CHECKBOX_2 = (
+        By.XPATH, "/html/body/div[2]/div/div[2]/div/div[2]/div[2]/div/table/tbody/tr[2]/td[1]/span/input")
+    APPLY_DOWNLOAD_REFRACTED_FILE = (By.XPATH, "//span[text()='Apply and download refractored file']")
+    DOWNLOAD_ORIGINAL_FILE_BUTTON = (By.XPATH, "//span[text()='Download original file']")
     """Constructor of the page class"""
 
     def __init__(self, driver):
