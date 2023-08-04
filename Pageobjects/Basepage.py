@@ -32,6 +32,7 @@ class Basepage:
         element = wait.until(EC.presence_of_all_elements_located((By.ID, "datapoint-attribute-input-box-id")))
         print("element", element)
         element[0].click()
+
     def do_click_LOAD_MORE(self):
         self.driver.find_element(By.XPATH, "/html/body/div/div/div[2]/div/div[5]/div/button").click()
 
@@ -246,3 +247,9 @@ class Basepage:
     def get_AUTH_TOKEN(self):
         AUTH_TOKEN = self.driver.execute_script("return window.localStorage.getItem('JWTToken')")
         return AUTH_TOKEN
+
+    def do_click_RENAME_COLUMN_FIELD(self):
+        self.driver.find_element(By.XPATH, "//span[text()='New column name']").click()
+
+    def do_sendkeys_RENAME_COLUMN_FIELD(self):
+        self.driver.find_element(By.XPATH, "//span[text()='New column name']").send_keys("UNIQUE ID")
