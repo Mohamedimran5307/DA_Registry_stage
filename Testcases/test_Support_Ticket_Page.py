@@ -37,3 +37,14 @@ class Test_Settings_page(Basetest):
         self.support_Ticket_page = Support_Ticket_Page(self.driver)
         self.support_Ticket_page.do_click(Support_Ticket_Page.SUPPORT_TICKET_ICON)
         sleep(5)
+
+        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/support":
+            allure.attach(self.driver.get_screenshot_as_png(), name="Support Ticket Icon is visible",
+                          attachment_type=AttachmentType.PNG)
+            assert True, "Support Ticket Icon is visible"
+        else:
+            allure.attach(self.driver.get_screenshot_as_png(), name="Support Ticket Icon is invisible",
+                          attachment_type=AttachmentType.PNG)
+            assert False, "Support Ticket Icon is invisible"
+        self.datasets_page.do_click(Support_Ticket_Page.SIGN_OUT_BUTTON)
+        print("Completed Test Case")
