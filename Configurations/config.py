@@ -3,7 +3,7 @@ import string
 
 
 class Testdata:
-    CHROME_EXECUTABLE_PATH = "/Users/shaikmohamedimran/Desktop/D/Web drivers/chromedriver.exe"
+    CHROME_EXECUTABLE_PATH = "/Users/shaikmohamedimran/Desktop/D/Web drivers/chromedriver"
 
     BASEURL = "https://datahubethstage.farmstack.co/"
     USER_NAME = "imran+1@digitalgreen.org"
@@ -211,3 +211,5 @@ class Testdata:
     UPDATE_CATGEORY_NAME_FIELD = "Agricultural crops"
 
     Rename_field_1 = "UNIQUE ID"
+
+    SEARCH_INPUT_TEXT_SUPPORT_TICKETS = "Certificate"
