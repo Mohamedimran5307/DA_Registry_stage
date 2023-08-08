@@ -207,26 +207,26 @@ class Basepage:
 
     def do_sendkeys_1(self):
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
-            "/Users/shaikmohamedimran/Desktop/CIMMYT_Data/PXD_Feed_(1).xlsx")
+            "/var/lib/jenkins/workspace/testcases-farmstack/File_Resources/PXD_Feed_(1).xlsx")
 
     def do_sendkeys_edit_dataset(self):
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
-            "/Users/shaikmohamedimran/Desktop/CIMMYT_Data/LDI_31.xls")
+            "/var/lib/jenkins/workspace/testcases-farmstack/File_Resources/LDI_31.xls")
 
     def do_sendkeys_ORG_LOGO(self):
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
-            "/Users/shaikmohamedimran/Desktop/CIMMYT_Data/DigitalGreen_logo.png")
+            "/var/lib/jenkins/workspace/testcases-farmstack/File_Resources/DigitalGreen_logo.png")
 
     def do_sendkeys_POLICIES(self):
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
-            "/Users/shaikmohamedimran/Desktop/CIMMYT_Data/Warranties.pdf")
+            "/var/lib/jenkins/workspace/testcases-farmstack/File_Resources/Warranties.pdf")
 
     def do_click_checkbox_filter_Subcategories(self):
         self.driver.find_element(By.ID, "check-box-1").click()
 
     def do_sendkeys_UPDATE_POLICIES(self):
         self.driver.find_element(By.ID, "file-upload-drag-and-drop-0-file-update").send_keys(
-            "/Users/shaikmohamedimran/Desktop/CIMMYT_Data/Warranties.pdf")
+            "/var/lib/jenkins/workspace/testcases-farmstack/File_Resources/Warranties.pdf")
 
     def get_element_text(self, by_locator):
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))
