@@ -253,3 +253,9 @@ class Basepage:
 
     def do_sendkeys_RENAME_COLUMN_FIELD(self):
         self.driver.find_element(By.XPATH, "//span[text()='New column name']").send_keys("UNIQUE ID")
+
+    def do_click_STATUS_CLOSE_CHECKBOX(self):
+        self.driver.find_element(By.ID, "closed").click()
+
+    def do_click_CATEGORY_DATASETS_CHECKBOX(self):
+        self.driver.find_element(By.ID, "datasets").click()
