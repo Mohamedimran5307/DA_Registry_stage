@@ -97,7 +97,6 @@ class Test_add_connector(Basetest):
         self.driver.execute_script("window.scrollBy(0,300);")
         sleep(2)
         self.connectors_page.do_click(Connectorspage.APPLY_BUTTON)
-        print("IMRAN")
         sleep(3)
         self.driver.execute_script("window.scrollBy(0,1300);")
         sleep(2)
