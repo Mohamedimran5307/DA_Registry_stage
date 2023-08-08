@@ -266,6 +266,52 @@ class Test_Settings_page(Basetest):
             assert False, "Adding Policy is successful"
         self.settings_page.do_click(SettingsPage.SIGN_OUT_BUTTON)
 
+    @allure.description("Testing Policy Settings Page")
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_add_policy_2_settings_page(self):
+        self.loginpage = Loginpage(self.driver)
+        sleep(3)
+        self.driver.execute_script("window.localStorage.clear();")
+        sleep(3)
+        self.driver.execute_script("window.location.reload(true);")
+        sleep(2)
+        self.driver.maximize_window()
+        self.loginpage.do_click(Loginpage.LOGIN_AS_ADMIN_BUTTON)
+        self.loginpage.do_click(Loginpage.USERNAME_FIELD)
+        self.loginpage.do_sendkeys(Loginpage.USERNAME_FIELD, Testdata.USER_NAME)
+        self.loginpage.do_click(Loginpage.SEND_OTP_BUTTON)
+        sleep(2)
+        self.loginpage.do_click(Loginpage.ENTER_OTP)
+        self.loginpage.do_sendkeys(Loginpage.ENTER_OTP, Testdata.OTP)
+        self.loginpage.do_click(Loginpage.VERIFY_OTP_BUTTON)
+        sleep(5)
+        self.settings_page = SettingsPage(self.driver)
+        self.settings_page.do_click(SettingsPage.SETTINGS_BUTTON)
+        self.settings_page.do_click(SettingsPage.POLICY_TAB)
+        self.settings_page.do_click(SettingsPage.ADD_NEW_POLICY)
+        self.settings_page.do_click(SettingsPage.POLICY_NAME_FIELD)
+        self.settings_page.do_sendkeys(SettingsPage.POLICY_NAME_FIELD, Testdata.POLICY_NAME)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.POLICY_DESCRIPTION)
+        self.settings_page.do_sendkeys(SettingsPage.POLICY_DESCRIPTION, Testdata.POLICY_DESCRIPTION)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        self.settings_page.do_sendkeys_POLICIES()
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.ADD_POLICY)
+        sleep(2)
+        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/3":
+            allure.attach(self.driver.get_screenshot_as_png(), name="Adding Policy is successful",
+                          attachment_type=AttachmentType.PNG)
+            assert True, "Adding Policy is successful"
+        else:
+            allure.attach(self.driver.get_screenshot_as_png(), name="Adding Policy is failed",
+                          attachment_type=AttachmentType.PNG)
+            assert False, "Adding Policy is successful"
+        self.settings_page.do_click(SettingsPage.SIGN_OUT_BUTTON)
+
     @allure.description("Updating Policy")
     @allure.severity(allure.severity_level.CRITICAL)
     def test_update_policy(self):

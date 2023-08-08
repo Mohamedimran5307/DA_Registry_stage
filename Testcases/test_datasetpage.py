@@ -147,6 +147,54 @@ class Test_datasetpage(Basetest):
         self.datasets_page.do_click(Datasetspage.SIGN_OUT_BUTTON)
         print("Completed Test Case")
 
+    @allure.description("Testing Download Dataset is visible")
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_Downlaod_Dataset_Button(self):
+        self.loginpage = Loginpage(self.driver)
+        sleep(3)
+        self.driver.execute_script("window.localStorage.clear();")
+        sleep(3)
+        self.driver.execute_script("window.location.reload(true);")
+        sleep(2)
+        self.driver.maximize_window()
+        self.loginpage.do_click(Loginpage.LOGIN_AS_ADMIN_BUTTON)
+        sleep(2)
+        self.loginpage.do_click(Loginpage.USERNAME_FIELD)
+        self.loginpage.do_sendkeys(Loginpage.USERNAME_FIELD, Testdata.USER_NAME)
+        self.loginpage.do_click(Loginpage.SEND_OTP_BUTTON)
+        sleep(2)
+        self.loginpage.do_click(Loginpage.ENTER_OTP)
+        self.loginpage.do_sendkeys(Loginpage.ENTER_OTP, Testdata.OTP)
+        self.loginpage.do_click(Loginpage.VERIFY_OTP_BUTTON)
+        sleep(3)
+        self.datasets_page = Datasetspage(self.driver)
+        sleep(2)
+        self.loginpage.do_click(Datasetspage.DATASET_TAB)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,500);")
+        sleep(2)
+        self.datasets_page.do_click(Datasetspage.FIRST_DATASET)
+        sleep(5)
+        self.driver.execute_script("window.scrollBy(0,700);")
+        sleep(2)
+        self.datasets_page.do_click(Datasetspage.ACCORDION_UPLOADED_FILES)
+        sleep(2)
+        self.datasets_page.do_click(Datasetspage.DOWNLOAD_UPLOADED_FILES)
+        sleep(2)
+        self.datasets_page.do_click(Datasetspage.DATASET_TAB)
+        sleep(2)
+
+        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/new_datasets":
+            allure.attach(self.driver.get_screenshot_as_png(), name="Successfully Dataset file is downloaded",
+                          attachment_type=AttachmentType.PNG)
+            assert True, "Successfully Dataset file is downloaded"
+        else:
+            allure.attach(self.driver.get_screenshot_as_png(), name="Failed to download dataset file",
+                          attachment_type=AttachmentType.PNG)
+            assert False, "Failed to download dataset file"
+        self.datasets_page.do_click(Datasetspage.SIGN_OUT_BUTTON)
+        print("Completed Test Case")
+
     @allure.description("Testing Adding Dataset from MySQL")
     @allure.severity(allure.severity_level.CRITICAL)
     def test_adding_dataset_MySQL(self):
@@ -826,54 +874,6 @@ class Test_datasetpage(Basetest):
             allure.attach(self.driver.get_screenshot_as_png(), name="Failed to update Dataset",
                           attachment_type=AttachmentType.PNG)
             assert False, "Failed to update Dataset"
-        self.datasets_page.do_click(Datasetspage.SIGN_OUT_BUTTON)
-        print("Completed Test Case")
-
-    @allure.description("Testing Download Dataset is visible")
-    @allure.severity(allure.severity_level.CRITICAL)
-    def test_Downlaod_Dataset_Button(self):
-        self.loginpage = Loginpage(self.driver)
-        sleep(3)
-        self.driver.execute_script("window.localStorage.clear();")
-        sleep(3)
-        self.driver.execute_script("window.location.reload(true);")
-        sleep(2)
-        self.driver.maximize_window()
-        self.loginpage.do_click(Loginpage.LOGIN_AS_ADMIN_BUTTON)
-        sleep(2)
-        self.loginpage.do_click(Loginpage.USERNAME_FIELD)
-        self.loginpage.do_sendkeys(Loginpage.USERNAME_FIELD, Testdata.USER_NAME)
-        self.loginpage.do_click(Loginpage.SEND_OTP_BUTTON)
-        sleep(2)
-        self.loginpage.do_click(Loginpage.ENTER_OTP)
-        self.loginpage.do_sendkeys(Loginpage.ENTER_OTP, Testdata.OTP)
-        self.loginpage.do_click(Loginpage.VERIFY_OTP_BUTTON)
-        sleep(3)
-        self.datasets_page = Datasetspage(self.driver)
-        sleep(2)
-        self.loginpage.do_click(Datasetspage.DATASET_TAB)
-        sleep(2)
-        self.driver.execute_script("window.scrollBy(0,500);")
-        sleep(2)
-        self.datasets_page.do_click(Datasetspage.FIRST_DATASET)
-        sleep(5)
-        self.driver.execute_script("window.scrollBy(0,700);")
-        sleep(2)
-        self.datasets_page.do_click(Datasetspage.ACCORDION_UPLOADED_FILES)
-        sleep(2)
-        self.datasets_page.do_click(Datasetspage.DOWNLOAD_UPLOADED_FILES)
-        sleep(2)
-        self.datasets_page.do_click(Datasetspage.DATASET_TAB)
-        sleep(2)
-
-        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/new_datasets":
-            allure.attach(self.driver.get_screenshot_as_png(), name="Successfully Dataset file is downloaded",
-                          attachment_type=AttachmentType.PNG)
-            assert True, "Successfully Dataset file is downloaded"
-        else:
-            allure.attach(self.driver.get_screenshot_as_png(), name="Failed to download dataset file",
-                          attachment_type=AttachmentType.PNG)
-            assert False, "Failed to download dataset file"
         self.datasets_page.do_click(Datasetspage.SIGN_OUT_BUTTON)
         print("Completed Test Case")
 

@@ -286,6 +286,60 @@ class Test_add_participant(Basetest):
             assert False, "Failed to registered Participant"
         print("Completed")
 
+    @allure.description("Testing Participant Registration tab")
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_participant_registration_2(self):
+        self.loginpage = Loginpage(self.driver)
+        sleep(3)
+        self.driver.execute_script("window.localStorage.clear();")
+        sleep(3)
+        self.driver.execute_script("window.location.reload(true);")
+        sleep(2)
+        self.driver.maximize_window()
+        self.loginpage.do_click(Loginpage.REGISTER_TAB)
+        sleep(2)
+        self.loginpage.do_click(Loginpage.ORGANIZATION_NAME_FIELD)
+        sleep(2)
+        self.loginpage.do_sendkeys(Loginpage.ORGANIZATION_NAME_FIELD, Testdata.ORGANIZATION_NAME)
+        sleep(1)
+        self.loginpage.do_click(Loginpage.ORGANIZATION_EMAIL_ID_FIELD)
+        self.loginpage.do_sendkeys(Loginpage.ORGANIZATION_EMAIL_ID_FIELD, Testdata.ORGANIZATION_EMAIL_ID)
+        sleep(2)
+        self.loginpage.do_click(Loginpage.ORGANIZATION_WEBSITE_LINK)
+        self.loginpage.do_sendkeys(Loginpage.ORGANIZATION_WEBSITE_LINK,
+                                   Testdata.ORGANIZATION_WEBSITE_LINK)
+        self.loginpage.do_click(Loginpage.ORGANIZATION_ADDRESS)
+        self.loginpage.do_sendkeys(Loginpage.ORGANIZATION_ADDRESS, Testdata.ORGANIZATION_ADDRESS)
+        self.loginpage.do_click(Loginpage.COUNTRY_DROP_DOWN)
+        sleep(1)
+        self.loginpage.do_click(Loginpage.SELECT_COUNTRY)
+        self.loginpage.do_click(Loginpage.PINCODE_FIELD)
+        self.loginpage.do_sendkeys(Loginpage.PINCODE_FIELD, Testdata.PINCODE)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,500);")
+        sleep(2)
+        self.loginpage.do_click(Loginpage.FIRST_NAME_FIELD)
+        self.loginpage.do_sendkeys(Loginpage.FIRST_NAME_FIELD, Testdata.FIRST_NAME)
+        self.loginpage.do_click(Loginpage.LAST_NAME_FIELD)
+        self.loginpage.do_sendkeys(Loginpage.LAST_NAME_FIELD, Testdata.LAST_NAME)
+        self.loginpage.do_click(Loginpage.ORGANIZATION_ROOT_USER_EMAIL_ID_FIELD)
+        self.loginpage.do_sendkeys(Loginpage.ORGANIZATION_ROOT_USER_EMAIL_ID_FIELD,
+                                   Testdata.ORGANIZATION_ROOT_USER_EMAIL_ID_2)
+        self.loginpage.do_click(Loginpage.ORGANIZATION_CONTACT_NUMBER)
+        self.loginpage.do_sendkeys(Loginpage.ORGANIZATION_CONTACT_NUMBER, Testdata.CONTACT_NUMBER)
+        sleep(3)
+        self.loginpage.do_click(Loginpage.SUBMIT_BUTTON)
+        sleep(2)
+
+        if self.driver.current_url == "https://datahubethstage.farmstack.co/home":
+            allure.attach(self.driver.get_screenshot_as_png(), name="Successfully Participant is registered",
+                          attachment_type=AttachmentType.PNG)
+            assert True, "Participant is successfully registered"
+        else:
+            allure.attach(self.driver.get_screenshot_as_png(), name="Failed to registered Participant",
+                          attachment_type=AttachmentType.PNG)
+            assert False, "Failed to registered Participant"
+        print("Completed")
     @allure.description("Testing cancel button")
     @allure.severity(allure.severity_level.NORMAL)
     def test_Cancel_button(self):
