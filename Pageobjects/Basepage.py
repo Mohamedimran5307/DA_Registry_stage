@@ -1,3 +1,5 @@
+import os
+
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
@@ -206,27 +208,85 @@ class Basepage:
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(text)
 
     def do_sendkeys_1(self):
+
+        filename = 'PXD_Feed_(1).xlsx'
+
+        # Get the absolute path to the current working directory
+        current_directory = os.getcwd()
+        file_resources_path = "File_Resources"
+
+        # Construct the absolute path to the file
+        absolute_path_to_file = os.path.join(current_directory, f"{file_resources_path}/{filename}")
+        print("absolute_path_to_file")
+        print(absolute_path_to_file)
+        print("absolute_path_to_file")
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
-            "/var/lib/jenkins/workspace/testcases-farmstack/File_Resources/PXD_Feed_(1).xlsx")
+            absolute_path_to_file)
 
     def do_sendkeys_edit_dataset(self):
+
+        filename = 'LDI_31.xls'
+
+        # Get the absolute path to the current working directory
+        current_directory = os.getcwd()
+        file_resources_path = "File_Resources"
+
+        # Construct the absolute path to the file
+        absolute_path_to_file = os.path.join(current_directory, f"{file_resources_path}/{filename}")
+        print("absolute_path_to_file")
+        print(absolute_path_to_file)
+        print("absolute_path_to_file")
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
-            "/var/lib/jenkins/workspace/testcases-farmstack/File_Resources/LDI_31.xls")
+            absolute_path_to_file)
 
     def do_sendkeys_ORG_LOGO(self):
+        filename = 'DigitalGreen_logo.png'
+
+        # Get the absolute path to the current working directory
+        current_directory = os.getcwd()
+        file_resources_path = "File_Resources"
+
+        # Construct the absolute path to the file
+        absolute_path_to_file = os.path.join(current_directory, f"{file_resources_path}/{filename}")
+        print("absolute_path_to_file")
+        print(absolute_path_to_file)
+        print("absolute_path_to_file")
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
-            "/var/lib/jenkins/workspace/testcases-farmstack/File_Resources/DigitalGreen_logo.png")
+            absolute_path_to_file)
 
     def do_sendkeys_POLICIES(self):
+        filename = 'Warranties.pdf'
+
+        # Get the absolute path to the current working directory
+        current_directory = os.getcwd()
+        file_resources_path = "File_Resources"
+
+        # Construct the absolute path to the file
+        absolute_path_to_file = os.path.join(current_directory, f"{file_resources_path}/{filename}")
+        print("absolute_path_to_file")
+        print(absolute_path_to_file)
+        print("absolute_path_to_file")
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
-            "/var/lib/jenkins/workspace/testcases-farmstack/File_Resources/Warranties.pdf")
+            absolute_path_to_file)
 
     def do_click_checkbox_filter_Subcategories(self):
         self.driver.find_element(By.ID, "check-box-1").click()
 
     def do_sendkeys_UPDATE_POLICIES(self):
-        self.driver.find_element(By.ID, "file-upload-drag-and-drop-0-file-update").send_keys(
-            "/var/lib/jenkins/workspace/testcases-farmstack/File_Resources/Warranties.pdf")
+
+        filename = 'Warranties.pdf'
+
+        # Get the absolute path to the current working directory
+        current_directory = os.getcwd()
+        file_resources_path = "File_Resources"
+
+        # Construct the absolute path to the file
+        absolute_path_to_file = os.path.join(current_directory, f"{file_resources_path}/{filename}")
+        print("absolute_path_to_file")
+        print(absolute_path_to_file)
+        print("absolute_path_to_file")
+        self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
+            absolute_path_to_file)
 
     def get_element_text(self, by_locator):
         element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator))

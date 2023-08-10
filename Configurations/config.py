@@ -1,10 +1,11 @@
+import os
 import random
 import string
 
 
 class Testdata:
-    CHROME_EXECUTABLE_PATH = "/Users/shaikmohamedimran/Desktop/D/Web drivers/chromedriver"
-
+    # CHROME_EXECUTABLE_PATH = "/Users/shaikmohamedimran/Desktop/D/Web drivers/chromedriver"
+    CHROME_EXECUTABLE_PATH = os.environ.get("CHROME_EXECUTABLE_PATH")
     BASEURL = "https://datahubethstage.farmstack.co/"
     USER_NAME = "imran+1@digitalgreen.org"
     OTP = "123456"
