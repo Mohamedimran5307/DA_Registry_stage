@@ -1,11 +1,27 @@
 import os
 import random
 import string
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 class Testdata:
+    # Load environment variables from .env file
+    load_dotenv()
     # CHROME_EXECUTABLE_PATH = "/Users/shaikmohamedimran/Desktop/D/Web drivers/chromedriver"
-    CHROME_EXECUTABLE_PATH = os.environ.get("CHROME_EXECUTABLE_PATH")
+    current_directory = os.getcwd()
+
+    # Get the value of the POLICY environment variable
+    final_directory = os.getenv("CHROME_EXECUTABLE_PATH")
+
+    # file_resources_path = "File_Resources"
+
+    # Construct the absolute path to the file
+    CHROME_EXECUTABLE_PATH = os.path.join(current_directory, f"{final_directory}")
+    # CHROME_EXECUTABLE_PATH = os.environ.get("CHROME_EXECUTABLE_PATH")
     BASEURL = "https://datahubethstage.farmstack.co/"
     USER_NAME = "imran+1@digitalgreen.org"
     OTP = "123456"
@@ -118,8 +134,10 @@ class Testdata:
     N = 9
     ADD_DATAPOINT_ATTRIBUTES = ''.join(random.choices(string.ascii_letters, k=N))
 
-    UPDATED_DATAPOINT_CATEGORY_NAME = "DIGITALGREEN"
+    N = 11
+    UPDATED_DATAPOINT_CATEGORY_NAME = ''.join(random.choices(string.ascii_letters, k=N))
 
+    UPDATED_DATAPOINT_CATEGORY_NAME_3 = "Soil Parameters"
     N = 15
     characters = string.ascii_letters + string.digits
     CONNECTOR_NAME = ''.join(random.choices(characters, k=N))

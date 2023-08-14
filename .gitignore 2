@@ -1,0 +1,7 @@
+# created by virtualenv automatically
+Testcases/allure-results/
+# Virtualenv
+venv/
+.env
+Testcases/webdriver/*
+/.idea/

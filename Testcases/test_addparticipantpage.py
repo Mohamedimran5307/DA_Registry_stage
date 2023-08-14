@@ -111,7 +111,7 @@ class Test_add_participant(Basetest):
         self.loginpage.do_click(Loginpage.VERIFY_OTP_BUTTON)
         sleep(2)
         self.participant_page = Participant_page(self.driver)
-        self.driver.maximize_window()
+        sleep(2)
         self.participant_page.do_click(Participant_page.PARTICIPANTS_BUTTON)
         sleep(2)
         self.participant_page.do_click(Participant_page.PARTICIPANT_BUTTON)
@@ -340,6 +340,7 @@ class Test_add_participant(Basetest):
                           attachment_type=AttachmentType.PNG)
             assert False, "Failed to registered Participant"
         print("Completed")
+
     @allure.description("Testing cancel button")
     @allure.severity(allure.severity_level.NORMAL)
     def test_Cancel_button(self):
