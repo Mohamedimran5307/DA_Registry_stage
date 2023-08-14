@@ -1,2 +1,0 @@
-export CHROME_EXECUTABLE_PATH=Testcases/webdriver/chromedriver
-export CHROME_EXECUTABLE_BROWSER=Testcases/webdriver/Google Chrome for Testing.app
