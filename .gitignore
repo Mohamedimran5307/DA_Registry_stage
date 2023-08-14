@@ -7,4 +7,6 @@ venv/
 /.idea/
 /allure-report/
 .env 2
-/Testcases/Reports/
+/Testcases/Reports/*
+/Reports/
+/Testcases/PXD_Feed_1_standerdise.xlsx
