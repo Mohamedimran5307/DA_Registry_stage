@@ -63,7 +63,7 @@ class Test_Settings_page(Basetest):
                           attachment_type=AttachmentType.PNG)
             assert False, "Updating account details is failed"
         self.settings_page.do_click(SettingsPage.SIGN_OUT_BUTTON)
-        print("jbds")
+        print("Completed")
 
     @allure.description("Testing Cancel Button in account settings is Visible")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -206,8 +206,9 @@ class Test_Settings_page(Basetest):
         self.settings_page = SettingsPage(self.driver)
         self.settings_page.do_click(SettingsPage.SETTINGS_BUTTON)
         self.settings_page.do_click(SettingsPage.ORGANIZATION_SETTINGS_TAB)
-        self.driver.execute_script("window.scrollBy(0,300);")
         sleep(2)
+        self.driver.execute_script("window.scrollBy(0,700);")
+        sleep(3)
         self.settings_page.do_click(SettingsPage.ORGANIZATION_CANCEL_BUTTON)
         sleep(2)
         if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/new_datasets":
@@ -312,6 +313,52 @@ class Test_Settings_page(Basetest):
             assert False, "Adding Policy is successful"
         self.settings_page.do_click(SettingsPage.SIGN_OUT_BUTTON)
 
+    @allure.description("Testing Policy Settings Page")
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_add_policy_3_settings_page(self):
+        self.loginpage = Loginpage(self.driver)
+        sleep(3)
+        self.driver.execute_script("window.localStorage.clear();")
+        sleep(3)
+        self.driver.execute_script("window.location.reload(true);")
+        sleep(2)
+        self.driver.maximize_window()
+        self.loginpage.do_click(Loginpage.LOGIN_AS_ADMIN_BUTTON)
+        self.loginpage.do_click(Loginpage.USERNAME_FIELD)
+        self.loginpage.do_sendkeys(Loginpage.USERNAME_FIELD, Testdata.USER_NAME)
+        self.loginpage.do_click(Loginpage.SEND_OTP_BUTTON)
+        sleep(2)
+        self.loginpage.do_click(Loginpage.ENTER_OTP)
+        self.loginpage.do_sendkeys(Loginpage.ENTER_OTP, Testdata.OTP)
+        self.loginpage.do_click(Loginpage.VERIFY_OTP_BUTTON)
+        sleep(5)
+        self.settings_page = SettingsPage(self.driver)
+        self.settings_page.do_click(SettingsPage.SETTINGS_BUTTON)
+        self.settings_page.do_click(SettingsPage.POLICY_TAB)
+        self.settings_page.do_click(SettingsPage.ADD_NEW_POLICY)
+        self.settings_page.do_click(SettingsPage.POLICY_NAME_FIELD)
+        self.settings_page.do_sendkeys(SettingsPage.POLICY_NAME_FIELD, Testdata.POLICY_NAME)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.POLICY_DESCRIPTION)
+        self.settings_page.do_sendkeys(SettingsPage.POLICY_DESCRIPTION, Testdata.POLICY_DESCRIPTION)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        self.settings_page.do_sendkeys_POLICIES()
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.ADD_POLICY)
+        sleep(2)
+        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/3":
+            allure.attach(self.driver.get_screenshot_as_png(), name="Adding Policy is successful",
+                          attachment_type=AttachmentType.PNG)
+            assert True, "Adding Policy is successful"
+        else:
+            allure.attach(self.driver.get_screenshot_as_png(), name="Adding Policy is failed",
+                          attachment_type=AttachmentType.PNG)
+            assert False, "Adding Policy is successful"
+        self.settings_page.do_click(SettingsPage.SIGN_OUT_BUTTON)
+
     @allure.description("Updating Policy")
     @allure.severity(allure.severity_level.CRITICAL)
     def test_update_policy(self):
@@ -366,6 +413,69 @@ class Test_Settings_page(Basetest):
         else:
             allure.attach(self.driver.get_screenshot_as_png(), name="Settings button is invisible",
                           attachment_type=AttachmentType.PNG)
+
+    @allure.description("Testing Policy Settings Page")
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_add_policy_2_settings_page(self):
+        self.loginpage = Loginpage(self.driver)
+        sleep(3)
+        self.driver.execute_script("window.localStorage.clear();")
+        sleep(3)
+        self.driver.execute_script("window.location.reload(true);")
+        sleep(2)
+        self.driver.maximize_window()
+        self.loginpage.do_click(Loginpage.LOGIN_AS_ADMIN_BUTTON)
+        self.loginpage.do_click(Loginpage.USERNAME_FIELD)
+        self.loginpage.do_sendkeys(Loginpage.USERNAME_FIELD, Testdata.USER_NAME)
+        self.loginpage.do_click(Loginpage.SEND_OTP_BUTTON)
+        sleep(2)
+        self.loginpage.do_click(Loginpage.ENTER_OTP)
+        self.loginpage.do_sendkeys(Loginpage.ENTER_OTP, Testdata.OTP)
+        self.loginpage.do_click(Loginpage.VERIFY_OTP_BUTTON)
+        sleep(5)
+        self.settings_page = SettingsPage(self.driver)
+        self.settings_page.do_click(SettingsPage.SETTINGS_BUTTON)
+        self.settings_page.do_click(SettingsPage.POLICY_TAB)
+        self.settings_page.do_click(SettingsPage.ADD_NEW_POLICY)
+        self.settings_page.do_click(SettingsPage.POLICY_NAME_FIELD)
+        self.settings_page.do_sendkeys(SettingsPage.POLICY_NAME_FIELD, Testdata.POLICY_NAME)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.POLICY_DESCRIPTION)
+        self.settings_page.do_sendkeys(SettingsPage.POLICY_DESCRIPTION, Testdata.POLICY_DESCRIPTION)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        self.settings_page.do_sendkeys_POLICIES()
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.ADD_POLICY)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,-800);")
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.POLICY_NAME_FIELD)
+        self.settings_page.do_sendkeys(SettingsPage.POLICY_NAME_FIELD, Testdata.POLICY_NAME)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.POLICY_DESCRIPTION)
+        self.settings_page.do_sendkeys(SettingsPage.POLICY_DESCRIPTION, Testdata.POLICY_DESCRIPTION)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        self.settings_page.do_sendkeys_POLICIES()
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.ADD_POLICY)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/3":
+            allure.attach(self.driver.get_screenshot_as_png(), name="Adding Policy is successful",
+                          attachment_type=AttachmentType.PNG)
+            assert True, "Adding Policy is successful"
+        else:
+            allure.attach(self.driver.get_screenshot_as_png(), name="Adding Policy is failed",
+                          attachment_type=AttachmentType.PNG)
+            assert False, "Adding Policy is successful"
+        self.settings_page.do_click(SettingsPage.SIGN_OUT_BUTTON)
 
     @allure.description("Testing Delete Policy")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -508,18 +618,16 @@ class Test_Settings_page(Basetest):
         self.settings_page.do_click(SettingsPage.SETTINGS_BUTTON)
         self.settings_page.do_click(SettingsPage.CATEGORY_TAB)
         self.settings_page.do_click(SettingsPage.UPDATE_CATEGORY_ACCORDION)
+        sleep(2)
         self.settings_page.do_click(SettingsPage.ADD_SUB_CATEGORY_NAME_FIELD)
         self.settings_page.do_sendkeys(SettingsPage.ADD_SUB_CATEGORY_NAME_FIELD, Testdata.ADD_SUB_CATEGORY_NAME)
+        sleep(2)
         self.settings_page.do_click(SettingsPage.ADD_SUB_CATEGORY_ICON)
-        self.driver.execute_script("window.scrollBy(0,700);")
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,1000);")
         sleep(2)
         self.settings_page.do_click(SettingsPage.CATEGORY_SUBMIT_BUTTON)
         sleep(2)
-        # self.settings_page.do_click(SettingsPage.UPDATE_CATEGORY_EDIT_ICON)
-        # self.settings_page.do_click(SettingsPage.EDIT_CATEGORY_NAME_FIELD)
-        # self.settings_page.do_click(SettingsPage.CATEGORY_SUBMIT_BUTTON)
-        # self.settings_page.do_click(SettingsPage.UPDATE_CATEGORY_DELETE_BUTTON)
-        # self.settings_page.do_click(SettingsPage.UPDATE_CATEGORY_DELETE_BUTTON_2)
         if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/4":
             allure.attach(self.driver.get_screenshot_as_png(), name="Adding Subcategory is successful",
                           attachment_type=AttachmentType.PNG)
@@ -528,6 +636,46 @@ class Test_Settings_page(Basetest):
             allure.attach(self.driver.get_screenshot_as_png(), name="Failed to add sub-categories",
                           attachment_type=AttachmentType.PNG)
             assert False, "Failed to add sub-categories"
+
+    @allure.description("Deleting sub categories")
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_deleting_sub_category(self):
+        self.loginpage = Loginpage(self.driver)
+        sleep(3)
+        self.driver.execute_script("window.localStorage.clear();")
+        sleep(3)
+        self.driver.execute_script("window.location.reload(true);")
+        sleep(2)
+        self.driver.maximize_window()
+        self.loginpage.do_click(Loginpage.LOGIN_AS_ADMIN_BUTTON)
+        self.loginpage.do_click(Loginpage.USERNAME_FIELD)
+        self.loginpage.do_sendkeys(Loginpage.USERNAME_FIELD, Testdata.USER_NAME)
+        self.loginpage.do_click(Loginpage.SEND_OTP_BUTTON)
+        sleep(2)
+        self.loginpage.do_click(Loginpage.ENTER_OTP)
+        self.loginpage.do_sendkeys(Loginpage.ENTER_OTP, Testdata.OTP)
+        self.loginpage.do_click(Loginpage.VERIFY_OTP_BUTTON)
+        sleep(5)
+        self.settings_page = SettingsPage(self.driver)
+        self.settings_page.do_click(SettingsPage.SETTINGS_BUTTON)
+        self.settings_page.do_click(SettingsPage.CATEGORY_TAB)
+        self.settings_page.do_click(SettingsPage.UPDATE_CATEGORY_ACCORDION)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.SUB_CATEGORY_DELETE_BUTTON)
+        self.driver.execute_script("window.scrollBy(0,700);")
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.CATEGORY_SUBMIT_BUTTON)
+        sleep(2)
+        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/4":
+            allure.attach(self.driver.get_screenshot_as_png(), name="Deleting Subcategory is successful",
+                          attachment_type=AttachmentType.PNG)
+            assert True, "Deleting Subcategory is successful"
+        else:
+            allure.attach(self.driver.get_screenshot_as_png(), name="Failed to Delete sub-categories",
+                          attachment_type=AttachmentType.PNG)
+            assert False, "Failed to Delete sub-categories"
 
     @allure.description("Updating Category Name")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -553,7 +701,13 @@ class Test_Settings_page(Basetest):
         self.settings_page.do_click(SettingsPage.CATEGORY_TAB)
         self.settings_page.do_click(SettingsPage.UPDATE_CATEGORY_ACCORDION)
         sleep(2)
-        self.settings_page.do_click(SettingsPage.UPDATE_CATEGORY_EDIT_ICON)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        # self.settings_page.do_click(SettingsPage.UPDATE_CATEGORY_EDIT_ICON)
+        # sleep(2)
+        self.settings_page.do_click(SettingsPage.UPDATE_CATEGORY_NAME_BUTTON)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,-300);")
         sleep(2)
         self.settings_page.do_click(SettingsPage.EDIT_CATEGORY_NAME_FIELD)
         self.settings_page.do_select_all(SettingsPage.EDIT_CATEGORY_NAME_FIELD)
@@ -616,7 +770,6 @@ class Test_Settings_page(Basetest):
             allure.attach(self.driver.get_screenshot_as_png(), name="Failed to Delete Category",
                           attachment_type=AttachmentType.PNG)
             assert False, "Failed to Delete Category"
-
 
     @allure.description("Cancel Button in Category ")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -684,7 +837,7 @@ class Test_Settings_page(Basetest):
                                        Testdata.DATAPOINT_CATEGORY_DESCRIPTION)
         self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_ADD_BUTTON)
         sleep(2)
-        self.driver.execute_script("window.scrollBy(0,1400);")
+        self.driver.execute_script("window.scrollBy(0,1000);")
         sleep(2)
         self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_SUBMIT_BUTTON)
         sleep(3)
@@ -727,7 +880,7 @@ class Test_Settings_page(Basetest):
                                        Testdata.DATAPOINT_CATEGORY_DESCRIPTION)
         self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_ADD_BUTTON)
         sleep(2)
-        self.driver.execute_script("window.scrollBy(0,1200);")
+        self.driver.execute_script("window.scrollBy(0,1000);")
         sleep(2)
         self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_CANCEL_BUTTON)
         sleep(3)
@@ -762,6 +915,54 @@ class Test_Settings_page(Basetest):
         sleep(2)
         self.driver.execute_script("window.scrollBy(0,700);")
         sleep(2)
+        self.settings_page.do_click(SettingsPage.UPDATE_DATAPOINT_CATEGORY_3)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.ADD_DATAPOINT_ATTRIBUTE_NAME_FIELD_3)
+        sleep(2)
+        # self.settings_page.do_click_ADD_DATAPOINT_ATTRIBUTE_NAME_FIELD()
+        # sleep(2)
+        self.settings_page.do_sendkeys(SettingsPage.ADD_DATAPOINT_ATTRIBUTE_NAME_FIELD_3,
+                                       Testdata.ADD_DATAPOINT_ATTRIBUTES)
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.ADD_DATAPOINT_ATTRIBUTE_ICON_3)  #
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,300);")
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_SUBMIT_BUTTON)
+        sleep(2)
+        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/5":
+            allure.attach(self.driver.get_screenshot_as_png(), name="Adding data-point attributes is successful",
+                          attachment_type=AttachmentType.PNG)
+            assert True, "Adding data-point attributes is successful"
+        else:
+            allure.attach(self.driver.get_screenshot_as_png(), name="Failed to add data-point attributes",
+                          attachment_type=AttachmentType.PNG)
+            assert False, "Failed to add data-point attributes"
+
+    @allure.description("Adding Datapoint Attributes")
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_Adding_Datapoint_Attributes_2(self):
+        self.loginpage = Loginpage(self.driver)
+        sleep(2)
+        self.driver.execute_script("window.localStorage.clear();")
+        self.driver.maximize_window()
+        self.loginpage.do_click(Loginpage.LOGIN_AS_ADMIN_BUTTON)
+        self.loginpage.do_click(Loginpage.USERNAME_FIELD)
+        self.loginpage.do_sendkeys(Loginpage.USERNAME_FIELD, Testdata.USER_NAME)
+        self.loginpage.do_click(Loginpage.SEND_OTP_BUTTON)
+        sleep(2)
+        self.loginpage.do_click(Loginpage.ENTER_OTP)
+        self.loginpage.do_sendkeys(Loginpage.ENTER_OTP, Testdata.OTP)
+        self.loginpage.do_click(Loginpage.VERIFY_OTP_BUTTON)
+        sleep(5)
+        self.settings_page = SettingsPage(self.driver)
+        self.settings_page.do_click(SettingsPage.SETTINGS_BUTTON)
+        self.settings_page.do_click(SettingsPage.DATAPOINT_TAB)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,700);")
+        sleep(2)
         self.settings_page.do_click(SettingsPage.UPDATE_DATAPOINT_CATEGORY)
         sleep(2)
         self.driver.execute_script("window.scrollBy(0,300);")
@@ -775,7 +976,7 @@ class Test_Settings_page(Basetest):
         sleep(2)
         self.settings_page.do_click(SettingsPage.ADD_DATAPOINT_ATTRIBUTE_ICON)  #
         sleep(2)
-        self.driver.execute_script("window.scrollBy(0,900);")
+        self.driver.execute_script("window.scrollBy(0,300);")
         sleep(2)
         self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_SUBMIT_BUTTON)
         if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/5":
@@ -786,6 +987,48 @@ class Test_Settings_page(Basetest):
             allure.attach(self.driver.get_screenshot_as_png(), name="Failed to add data-point attributes",
                           attachment_type=AttachmentType.PNG)
             assert False, "Failed to add data-point attributes"
+    @allure.description("Adding Datapoint_category")
+    @allure.severity(allure.severity_level.CRITICAL)
+    def test_adding_datapoint_category_2(self):
+        self.loginpage = Loginpage(self.driver)
+        sleep(3)
+        self.driver.execute_script("window.localStorage.clear();")
+        sleep(3)
+        self.driver.execute_script("window.location.reload(true);")
+        sleep(2)
+        self.driver.maximize_window()
+        self.loginpage.do_click(Loginpage.LOGIN_AS_ADMIN_BUTTON)
+        self.loginpage.do_click(Loginpage.USERNAME_FIELD)
+        self.loginpage.do_sendkeys(Loginpage.USERNAME_FIELD, Testdata.USER_NAME)
+        self.loginpage.do_click(Loginpage.SEND_OTP_BUTTON)
+        sleep(2)
+        self.loginpage.do_click(Loginpage.ENTER_OTP)
+        self.loginpage.do_sendkeys(Loginpage.ENTER_OTP, Testdata.OTP)
+        self.loginpage.do_click(Loginpage.VERIFY_OTP_BUTTON)
+        sleep(5)
+        self.settings_page = SettingsPage(self.driver)
+        self.settings_page.do_click(SettingsPage.SETTINGS_BUTTON)
+        self.settings_page.do_click(SettingsPage.DATAPOINT_TAB)
+        self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_NAME_FIELD)
+        self.settings_page.do_sendkeys(SettingsPage.DATAPOINT_CATEGORY_NAME_FIELD, Testdata.DATAPOINT_CATEGORY_NAME)
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_DESCRIPTION_FIELD)
+        self.settings_page.do_sendkeys(SettingsPage.DATAPOINT_CATEGORY_DESCRIPTION_FIELD,
+                                       Testdata.DATAPOINT_CATEGORY_DESCRIPTION)
+        self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_ADD_BUTTON)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,1000);")
+        sleep(2)
+        self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_SUBMIT_BUTTON)
+        sleep(3)
+        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/5":
+            allure.attach(self.driver.get_screenshot_as_png(), name="Adding data-point category is successful",
+                          attachment_type=AttachmentType.PNG)
+            assert True, "Adding data-point category is successful"
+        else:
+            allure.attach(self.driver.get_screenshot_as_png(), name="Failed to Add data-point category",
+                          attachment_type=AttachmentType.PNG)
+            assert False, "Failed to Add data-point category"
 
     @allure.description("Updating Datapoint name")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -809,19 +1052,21 @@ class Test_Settings_page(Basetest):
         sleep(2)
         self.driver.execute_script("window.scrollBy(0,800);")
         sleep(2)
-        self.settings_page.do_click(SettingsPage.UPDATE_DATAPOINT_CATEGORY)
+        self.settings_page.do_click(SettingsPage.UPDATE_DATAPOINT_CATEGORY_3)
         sleep(2)
-        self.settings_page.do_click(SettingsPage.UPDATE_DATAPOINT_CATEGORY_EDIT_BUTTON)
+        self.settings_page.do_click(SettingsPage.UPDATE_DATAPOINT_CATEGORY_EDIT_BUTTON_3)
         sleep(2)
-        self.settings_page.do_select_all(SettingsPage.EDIT_DATAPOINT_CATEGORY_NAME_FIELD)
-        self.settings_page.do_clear(SettingsPage.EDIT_DATAPOINT_CATEGORY_NAME_FIELD)
+        self.settings_page.do_select_all(SettingsPage.EDIT_DATAPOINT_CATEGORY_NAME_FIELD_3)
+        self.settings_page.do_clear(SettingsPage.EDIT_DATAPOINT_CATEGORY_NAME_FIELD_3)
         sleep(2)
-        self.settings_page.do_sendkeys(SettingsPage.EDIT_DATAPOINT_CATEGORY_NAME_FIELD,
-                                       Testdata.UPDATED_DATAPOINT_CATEGORY_NAME)
+        self.settings_page.do_sendkeys(SettingsPage.EDIT_DATAPOINT_CATEGORY_NAME_FIELD_3,
+                                       Testdata.UPDATED_DATAPOINT_CATEGORY_NAME_3)
         sleep(2)
-        self.settings_page.do_click(SettingsPage.UPDATE_DATAPOINT_CATEGORY_UPDATE_BUTTON)
+        self.driver.execute_script("window.scrollBy(0,300);")
         sleep(2)
-        self.driver.execute_script("window.scrollBy(0,900);")
+        self.settings_page.do_click(SettingsPage.UPDATE_DATAPOINT_CATEGORY_UPDATE_BUTTON_3)
+        sleep(2)
+        self.driver.execute_script("window.scrollBy(0,300);")
         sleep(2)
         self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_SUBMIT_BUTTON)
         sleep(3)
@@ -836,7 +1081,7 @@ class Test_Settings_page(Basetest):
 
     @allure.description("Testing Deleting Data_point_attribute")
     @allure.severity(allure.severity_level.CRITICAL)
-    def test_Deleting_Data_point_attribute(self):
+    def test_Deleting_Data_Point_Attribute(self):
         self.loginpage = Loginpage(self.driver)
         sleep(3)
         self.driver.execute_script("window.localStorage.clear();")
@@ -863,11 +1108,11 @@ class Test_Settings_page(Basetest):
         sleep(2)
         self.settings_page.do_click(SettingsPage.DELETE_DATA_POINT_ATTRIBUTE_ICON)
         sleep(2)
-        self.driver.execute_script("window.scrollBy(0,500);")
+        self.driver.execute_script("window.scrollBy(0,600);")
         sleep(2)
         self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_SUBMIT_BUTTON)
         sleep(2)
-        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/4":
+        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/5":
             allure.attach(self.driver.get_screenshot_as_png(), name="Deleting Data-point_attribute is successful",
                           attachment_type=AttachmentType.PNG)
             assert True, "Deleting Data-point_attribute is successful"
@@ -906,11 +1151,11 @@ class Test_Settings_page(Basetest):
         sleep(2)
         self.settings_page.do_click(SettingsPage.DELETE_DATAPOINT_CATEGORY_POPPER_BUTTON)
         sleep(2)
-        self.driver.execute_script("window.scrollBy(0,800);")
-        sleep(2)
-        self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_SUBMIT_BUTTON)
-        sleep(2)
-        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/4":
+        # self.driver.execute_script("window.scrollBy(0,800);")
+        # sleep(2)
+        # self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_SUBMIT_BUTTON)
+        # sleep(2)
+        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/5":
             allure.attach(self.driver.get_screenshot_as_png(), name="Deleting Data-point is successful",
                           attachment_type=AttachmentType.PNG)
             assert True, "Deleting Data-point is successful"
@@ -951,11 +1196,12 @@ class Test_Settings_page(Basetest):
         self.settings_page.do_click(SettingsPage.DELETE_DATAPOINT_CATEGORY)
         sleep(2)
         self.settings_page.do_click(SettingsPage.DELETE_DATAPOINT_CATEGORY_POPPER_BUTTON)
-        self.driver.execute_script("window.scrollBy(0,700);")
         sleep(2)
-        self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_SUBMIT_BUTTON)
-        sleep(2)
-        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/4":
+        # self.driver.execute_script("window.scrollBy(0,700);")
+        # sleep(2)
+        # self.settings_page.do_click(SettingsPage.DATAPOINT_CATEGORY_SUBMIT_BUTTON)
+        # sleep(2)
+        if self.driver.current_url == "https://datahubethstage.farmstack.co/datahub/settings/5":
             allure.attach(self.driver.get_screenshot_as_png(), name="Deleting Data-point is successful",
                           attachment_type=AttachmentType.PNG)
             assert True, "Deleting Data-point is successful"

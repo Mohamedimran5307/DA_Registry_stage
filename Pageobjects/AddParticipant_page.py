@@ -38,12 +38,12 @@ class Participant_page(Basepage):
     INVITE_PARTICIPANT_EMAIL_FIELD = (By.ID,"invite-participants-emails-textfield")
     ADD_INVITE_NOTE = (By.XPATH, "/html/body/div/div/div[2]/div/div[4]/div/div[2]/div/div/div")
     INVITE_SUBMIT_BUTTON = (By.ID,"details-page-load-more-dataset-button")
-    INVITE_CANCEL_BUTTON = (By.ID,"")
+    INVITE_CANCEL_BUTTON = (By.XPATH,"/html/body/div/div/div[2]/div/div[5]/button[2]")
     """Constructor of the page class"""
 
     def __init__(self, driver):
         super().__init__(driver)
-        self.driver.get(Testdata.BASEURL)
+        # self.driver.get(Testdata.BASEURL)
 
     """ These are the page actions for the Add_participant_page"""
 

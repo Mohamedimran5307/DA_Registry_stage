@@ -2,6 +2,7 @@ from selenium import webdriver
 import pytest
 from selenium.webdriver.chrome.service import Service
 from Configurations.config import Testdata
+from selenium.webdriver.chrome.options import Options as ChromeOptions
 
 
 @pytest.fixture(params=["chrome"], scope='class')
@@ -10,7 +11,7 @@ def init_driver(request):
     if request.param == "chrome":
         # Path to the ChromeDriver executable
         chrome_driver_path = Testdata.CHROME_EXECUTABLE_PATH
-
+        print(chrome_driver_path)
         # # Create a Service object
         chrome_service = Service(executable_path=chrome_driver_path)
 
@@ -21,6 +22,7 @@ def init_driver(request):
 
         # # # Launch ChromeDriver using the Service object
         # driver = webdriver.Chrome(service=chrome_service)
+
 
         # Launch ChromeDriver with headless mode
         driver = webdriver.Chrome(service=chrome_service, options=chrome_options)

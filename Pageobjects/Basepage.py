@@ -1,4 +1,8 @@
+from dotenv import load_dotenv
 import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
@@ -208,64 +212,64 @@ class Basepage:
         WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located(by_locator)).send_keys(text)
 
     def do_sendkeys_1(self):
-
-        filename = 'PXD_Feed_(1).xlsx'
-
         # Get the absolute path to the current working directory
         current_directory = os.getcwd()
-        file_resources_path = "File_Resources"
+
+        final_directory = os.getenv("UPLOAD_FILE")
+        # file_resources_path = "File_Resources"
 
         # Construct the absolute path to the file
-        absolute_path_to_file = os.path.join(current_directory, f"{file_resources_path}/{filename}")
-        print("absolute_path_to_file")
-        print(absolute_path_to_file)
-        print("absolute_path_to_file")
+        absolute_path_to_file = os.path.join(current_directory, f"{final_directory}")
+        # print("current_directory : " ,absolute_path_to_file)
+        print("current_directory", current_directory)
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
             absolute_path_to_file)
 
     def do_sendkeys_edit_dataset(self):
-
-        filename = 'LDI_31.xls'
-
         # Get the absolute path to the current working directory
         current_directory = os.getcwd()
-        file_resources_path = "File_Resources"
+
+        # Get the value of the EDIT_FILE environment variable
+        final_directory = os.getenv("EDIT_FILE")
+
+        # file_resources_path = "File_Resources"
 
         # Construct the absolute path to the file
-        absolute_path_to_file = os.path.join(current_directory, f"{file_resources_path}/{filename}")
-        print("absolute_path_to_file")
-        print(absolute_path_to_file)
-        print("absolute_path_to_file")
+        absolute_path_to_file = os.path.join(current_directory, f"{final_directory}")
+        # print("current_directory : " ,absolute_path_to_file)
+        print("current_directory", current_directory)
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
             absolute_path_to_file)
 
     def do_sendkeys_ORG_LOGO(self):
-        filename = 'DigitalGreen_logo.png'
-
         # Get the absolute path to the current working directory
         current_directory = os.getcwd()
-        file_resources_path = "File_Resources"
+
+        # Get the value of the ORG_LOGO environment variable
+        final_directory = os.getenv("ORG_LOGO")
+
+        # file_resources_path = "File_Resources"
 
         # Construct the absolute path to the file
-        absolute_path_to_file = os.path.join(current_directory, f"{file_resources_path}/{filename}")
-        print("absolute_path_to_file")
-        print(absolute_path_to_file)
-        print("absolute_path_to_file")
+        absolute_path_to_file = os.path.join(current_directory, f"{final_directory}")
+        # print("current_directory : " ,absolute_path_to_file)
+        print("current_directory", current_directory)
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
             absolute_path_to_file)
 
     def do_sendkeys_POLICIES(self):
         filename = 'Warranties.pdf'
-
-        # Get the absolute path to the current working directory
         current_directory = os.getcwd()
-        file_resources_path = "File_Resources"
+
+        # Get the value of the POLICY environment variable
+        final_directory = os.getenv("POLICY")
+
+        # file_resources_path = "File_Resources"
 
         # Construct the absolute path to the file
-        absolute_path_to_file = os.path.join(current_directory, f"{file_resources_path}/{filename}")
-        print("absolute_path_to_file")
-        print(absolute_path_to_file)
-        print("absolute_path_to_file")
+        absolute_path_to_file = os.path.join(current_directory, f"{final_directory}")
+        # print("current_directory : " ,absolute_path_to_file)
+        print("current_directory", current_directory)
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
             absolute_path_to_file)
 
@@ -273,18 +277,17 @@ class Basepage:
         self.driver.find_element(By.ID, "check-box-1").click()
 
     def do_sendkeys_UPDATE_POLICIES(self):
-
         filename = 'Warranties.pdf'
-
-        # Get the absolute path to the current working directory
         current_directory = os.getcwd()
-        file_resources_path = "File_Resources"
+        # Get the value of the POLICY environment variable
+        final_directory = os.getenv("POLICY")
+        # Get the absolute path to the current working directory
+        # file_resources_path = "File_Resources"
 
         # Construct the absolute path to the file
-        absolute_path_to_file = os.path.join(current_directory, f"{file_resources_path}/{filename}")
-        print("absolute_path_to_file")
-        print(absolute_path_to_file)
-        print("absolute_path_to_file")
+        absolute_path_to_file = os.path.join(current_directory, f"{final_directory}")
+        # print("current_directory : " ,absolute_path_to_file)
+        print("current_directory", current_directory)
         self.driver.find_element(By.XPATH, "//input[@type='file']").send_keys(
             absolute_path_to_file)
 
