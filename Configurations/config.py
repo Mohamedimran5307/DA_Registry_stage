@@ -13,6 +13,7 @@ class Testdata:
     load_dotenv()
     # CHROME_EXECUTABLE_PATH = "/Users/shaikmohamedimran/Desktop/D/Web drivers/chromedriver"
     current_directory = os.getcwd()
+    print(current_directory)
 
     # Get the value of the POLICY environment variable
     final_directory = os.getenv("CHROME_EXECUTABLE_PATH")
