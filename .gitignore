@@ -5,7 +5,7 @@ Testcases/allure-results/
 # Virtualenv
 venv/
 /Testcases/webdriver/Google_Chrome_for _Testing.app/
-/Testcases/webdriver/chromedriver
+/webdriver/chromedriver
 /.idea/
 /allure-report/*
 .env 2
