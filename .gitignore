@@ -1,5 +1,7 @@
 # created by virtualenv automatically
 Testcases/allure-results/
+
+
 # Virtualenv
 venv/
 /Testcases/webdriver/Google_Chrome_for _Testing.app/
@@ -9,4 +11,3 @@ venv/
 .env 2
 /Testcases/Reports/*
 /Reports/
-/Testcases/PXD_Feed_1_standerdise.xlsx

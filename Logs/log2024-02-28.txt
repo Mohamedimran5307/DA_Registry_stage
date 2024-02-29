@@ -1,0 +1,12 @@
+2024-02-28 14:47:28,254 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-28 14:47:28,538 - Basepage.py:[121] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-28 14:47:28,581 - Basepage.py:[92] - [INFO] - Clicking on elementPASSWORD_XPATHwith index:0
+2024-02-28 14:47:28,637 - Basepage.py:[105] - [INFO] - Clicking on elementPASSWORD_XPATHwith index:0
+2024-02-28 14:47:28,677 - Basepage.py:[54] - [INFO] - Clicking on element: CHECKBOX_ID
+2024-02-28 14:47:28,710 - Basepage.py:[54] - [INFO] - Clicking on element: SUBMIT_BUTTON_XPATH
+2024-02-28 21:56:03,010 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-28 21:56:03,193 - Basepage.py:[121] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-28 21:56:03,226 - Basepage.py:[92] - [INFO] - Clicking on elementPASSWORD_XPATHwith index:0
+2024-02-28 21:56:03,273 - Basepage.py:[105] - [INFO] - Clicking on elementPASSWORD_XPATHwith index:0
+2024-02-28 21:56:03,303 - Basepage.py:[54] - [INFO] - Clicking on element: CHECKBOX_ID
+2024-02-28 21:56:03,342 - Basepage.py:[54] - [INFO] - Clicking on element: SUBMIT_BUTTON_XPATH

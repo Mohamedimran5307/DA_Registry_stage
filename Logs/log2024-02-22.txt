@@ -1,0 +1,73 @@
+2024-02-22 13:05:53,524 - Basepage.py:[70] - [INFO] - Locator type 'USERNAME_FIELD_TEXT' is not supported or text value is missing.
+2024-02-22 13:05:53,526 - Basepage.py:[71] - [INFO] - Clicking on element: USERNAME_FIELD_TEXT
+2024-02-22 13:05:53,526 - Basepage.py:[104] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 13:06:54,577 - Basepage.py:[70] - [INFO] - Locator type 'USERNAME_FIELD_TEXT' is not supported or text value is missing.
+2024-02-22 13:06:54,579 - Basepage.py:[71] - [INFO] - Clicking on element: USERNAME_FIELD_TEXT
+2024-02-22 13:06:59,584 - Basepage.py:[104] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 13:07:29,236 - Basepage.py:[70] - [INFO] - Locator type 'USERNAME_FIELD_TEXT' is not supported or text value is missing.
+2024-02-22 13:07:29,241 - Basepage.py:[71] - [INFO] - Clicking on element: USERNAME_FIELD_TEXT
+2024-02-22 13:07:34,248 - Basepage.py:[104] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:00:00,032 - Basepage.py:[52] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:00:00,226 - Basepage.py:[104] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:00:00,245 - Basepage.py:[52] - [INFO] - Clicking on element: PASSWORD_XPATH
+2024-02-22 15:00:00,289 - Basepage.py:[104] - [INFO] - Typing in an elementEntering the value as:@gmail.com
+2024-02-22 15:00:00,328 - Basepage.py:[52] - [INFO] - Clicking on element: CHECKBOX_ID
+2024-02-22 15:10:19,352 - Basepage.py:[52] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:10:19,608 - Basepage.py:[104] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:10:19,641 - Basepage.py:[52] - [INFO] - Clicking on element: PASSWORD_XPATH
+2024-02-22 15:12:38,532 - Basepage.py:[52] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:12:38,699 - Basepage.py:[104] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:12:38,732 - Basepage.py:[52] - [INFO] - Clicking on element: PASSWORD_XPATH
+2024-02-22 15:12:38,786 - Basepage.py:[104] - [INFO] - Typing in an elementEntering the value as:@gmail.com
+2024-02-22 15:12:38,824 - Basepage.py:[52] - [INFO] - Clicking on element: CHECKBOX_ID
+2024-02-22 15:12:38,855 - Basepage.py:[52] - [INFO] - Clicking on element: SUBMIT_BUTTON_XPATH
+2024-02-22 15:19:11,999 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:19:12,180 - Basepage.py:[119] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:20:51,875 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:20:52,074 - Basepage.py:[119] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:22:07,925 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:22:08,092 - Basepage.py:[119] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:23:44,271 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:23:44,438 - Basepage.py:[119] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:24:23,350 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:24:23,563 - Basepage.py:[119] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:24:23,593 - Basepage.py:[90] - [INFO] - Clicking on elementPASSWORD_IDwith index:1
+2024-02-22 15:24:23,612 - Basepage.py:[103] - [INFO] - Clicking on elementPASSWORD_IDwith index:1
+2024-02-22 15:24:23,653 - Basepage.py:[54] - [INFO] - Clicking on element: CHECKBOX_ID
+2024-02-22 15:25:37,654 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:25:37,829 - Basepage.py:[119] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:25:37,859 - Basepage.py:[90] - [INFO] - Clicking on elementPASSWORD_IDwith index:1
+2024-02-22 15:25:37,877 - Basepage.py:[103] - [INFO] - Clicking on elementPASSWORD_IDwith index:1
+2024-02-22 15:25:43,956 - Basepage.py:[54] - [INFO] - Clicking on element: CHECKBOX_ID
+2024-02-22 15:28:55,008 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:28:55,208 - Basepage.py:[119] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:28:55,237 - Basepage.py:[90] - [INFO] - Clicking on elementPASSWORD_IDwith index:1
+2024-02-22 15:28:55,255 - Basepage.py:[103] - [INFO] - Clicking on elementPASSWORD_IDwith index:1
+2024-02-22 15:29:01,307 - Basepage.py:[54] - [INFO] - Clicking on element: CHECKBOX_ID
+2024-02-22 15:33:01,125 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:33:01,327 - Basepage.py:[119] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:36:57,974 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:36:58,187 - Basepage.py:[120] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:37:59,753 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:37:59,947 - Basepage.py:[120] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:39:05,588 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:39:05,760 - Basepage.py:[121] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:40:29,556 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:40:29,763 - Basepage.py:[121] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:41:12,535 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:41:12,743 - Basepage.py:[121] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:41:12,774 - Basepage.py:[92] - [INFO] - Clicking on elementPASSWORD_XPATHwith index:0
+2024-02-22 15:41:12,824 - Basepage.py:[105] - [INFO] - Clicking on elementPASSWORD_XPATHwith index:0
+2024-02-22 15:41:18,885 - Basepage.py:[54] - [INFO] - Clicking on element: CHECKBOX_ID
+2024-02-22 15:41:18,923 - Basepage.py:[54] - [INFO] - Clicking on element: SUBMIT_BUTTON_XPATH
+2024-02-22 15:42:14,944 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:42:15,143 - Basepage.py:[121] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:42:15,163 - Basepage.py:[92] - [INFO] - Clicking on elementPASSWORD_XPATHwith index:0
+2024-02-22 15:42:15,210 - Basepage.py:[105] - [INFO] - Clicking on elementPASSWORD_XPATHwith index:0
+2024-02-22 15:42:21,287 - Basepage.py:[54] - [INFO] - Clicking on element: CHECKBOX_ID
+2024-02-22 15:42:37,781 - Basepage.py:[54] - [INFO] - Clicking on element: USERNAME_FIELD_ID
+2024-02-22 15:42:37,999 - Basepage.py:[121] - [INFO] - Typing in an elementEntering the value as:national@digitalgreen.org
+2024-02-22 15:42:38,031 - Basepage.py:[92] - [INFO] - Clicking on elementPASSWORD_XPATHwith index:0
+2024-02-22 15:42:38,086 - Basepage.py:[105] - [INFO] - Clicking on elementPASSWORD_XPATHwith index:0
+2024-02-22 15:42:44,134 - Basepage.py:[54] - [INFO] - Clicking on element: CHECKBOX_ID
+2024-02-22 15:42:44,165 - Basepage.py:[54] - [INFO] - Clicking on element: SUBMIT_BUTTON_XPATH
