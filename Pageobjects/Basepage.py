@@ -141,6 +141,9 @@ class Basepage:
         for i in range(1, howManySwipes + 1):
             driver.swipe(514, 600, 514, 200, 1000)
 
+    def do_swipe(self, howManySwipes, driver):
+        for i in range(1, howManySwipes + 1):
+            driver.swipe(514, 600, 514, 200, 1000)
 
     def get_title(self, title):
         WebDriverWait(self.driver, 10).until(EC.title_is(title))

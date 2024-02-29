@@ -13,7 +13,7 @@ load_dotenv()
 class Testdata:
     # Load environment variables from .env file
     load_dotenv()
-    # print("ekta")
+    print("Test")
     # CHROME_EXECUTABLE_PATH = "/Users/shaikmohamedimran/Desktop/D/Web drivers/chromedriver"
     # print("IMRAN",CHROME_EXECUTABLE_PATH)
     current_directory = os.getcwd()
