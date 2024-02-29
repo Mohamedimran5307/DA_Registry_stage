@@ -45,7 +45,7 @@ class Test_login(Basetest):
         if self.driver.current_url == "https://stage.digiext.org/da/dashboard":
             allure.attach(self.driver.get_screenshot_as_png(), name="Login is successful",
                           attachment_type=AttachmentType.PNG)
-            assert True, "Login is successfull"
+            assert True, "Login is successful"
         else:
             allure.attach(self.driver.get_screenshot_as_png(), name="Login is failed",
                           attachment_type=AttachmentType.PNG)
