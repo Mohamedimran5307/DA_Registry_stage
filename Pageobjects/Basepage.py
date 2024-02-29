@@ -142,7 +142,7 @@ class Basepage:
         WebDriverWait(self.driver, 10).until(EC.title_is(title))
         return self.driver.title
 
-    # def do_sendkeys_1(self):
+    #  def do_sendkeys_1(self):
     #     # Get the absolute path to the current working directory
     #     current_directory = os.getcwd()
     #
