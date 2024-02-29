@@ -79,7 +79,8 @@ class Basepage:
     def do_click_index(self, locator, index):
         wait = WebDriverWait(self.driver, 10)
         if str(locator).endswith("_XPATH"):
-            elements=wait.until(EC.presence_of_all_elements_located((By.XPATH, configReader.readConfig("locators", locator))))
+            elements = wait.until(
+                EC.presence_of_all_elements_located((By.XPATH, configReader.readConfig("locators", locator))))
             elements[index].click()
         elif str(locator).endswith("NAME"):
             self.driver.find_elements(By.NAME, configReader.readConfig("locators", locator))[index].click()
@@ -91,15 +92,17 @@ class Basepage:
             self.driver.find_elements(By.ID, configReader.readConfig("locators", locator))[index].click()
         log.logger.info("Clicking on element" + str(locator) + "with index:" + str(index))
 
-    def do_type_index(self, locator, index,value):
+    def do_type_index(self, locator, index, value):
         if str(locator).endswith("_XPATH"):
             self.driver.find_elements(By.XPATH, configReader.readConfig("locators", locator))[index].send_keys(value)
         elif str(locator).endswith("NAME"):
             self.driver.find_elements(By.NAME, configReader.readConfig("locators", locator))[index].send_keys(value)
         elif str(locator).endswith("CLASS_NAME"):
-            self.driver.find_elements(By.CLASS_NAME, configReader.readConfig("locators", locator))[index].send_keys(value)
+            self.driver.find_elements(By.CLASS_NAME, configReader.readConfig("locators", locator))[index].send_keys(
+                value)
         elif str(locator).endswith("CSS_SELECTOR"):
-            self.driver.find_elements(By.CSS_SELECTOR, configReader.readConfig("locators", locator))[index].send_keys(value)
+            self.driver.find_elements(By.CSS_SELECTOR, configReader.readConfig("locators", locator))[index].send_keys(
+                value)
         elif str(locator).endswith("_ID"):
             self.driver.find_elements(By.ID, configReader.readConfig("locators", locator))[index].click()
         log.logger.info("Clicking on element" + str(locator) + "with index:" + str(index))
@@ -135,6 +138,10 @@ class Basepage:
         return text
 
     def do_swipeUp(self, howManySwipes, driver):
+        for i in range(1, howManySwipes + 1):
+            driver.swipe(514, 600, 514, 200, 1000)
+
+    def do_swipe(self, howManySwipes, driver):
         for i in range(1, howManySwipes + 1):
             driver.swipe(514, 600, 514, 200, 1000)
 

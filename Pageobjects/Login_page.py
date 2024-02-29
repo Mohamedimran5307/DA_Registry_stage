@@ -17,9 +17,9 @@ class Login_page(Basepage):
     def Username_login(self, USER_NAME, PASSWORD):
         self.do_click("USERNAME_FIELD_ID")
         self.do_type("USERNAME_FIELD_ID", USER_NAME)
-        print("Hi")
+        # print("Hi")
         self.do_click_index("PASSWORD_XPATH", 0)
-        print("Bye")
+        # print("Bye")
         self.do_type_index("PASSWORD_XPATH", 0, PASSWORD)
         # self.do_click("PASSWORD_XPATH")
         # self.do_type("PASSWORD_XPATH", PASSWORD)

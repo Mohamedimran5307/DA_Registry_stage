@@ -31,6 +31,7 @@ class Testdata:
     USER_NAME = "national@digitalgreen.org"
     PASSWORD = "@gmail.com"
     HOMEPAGE_TITLE = "DA Registry"
+    HOMEPAGE_til = "DA Registry"
 
 
     # N = 10

@@ -11,7 +11,7 @@ def init_driver(request):
     if request.param == "chrome":
         # Path to the ChromeDriver executable
         chrome_driver_path = Testdata.CHROME_EXECUTABLE_PATH
-        # print(chrome_driver_path)
+        print(chrome_driver_path)
         # # Create a Service object
         chrome_service = Service(executable_path=chrome_driver_path)
 
