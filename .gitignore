@@ -8,6 +8,5 @@ venv/
 /webdriver/chromedriver
 /.idea/
 /allure-report/*
-.env 2
 /Testcases/Reports/*
 /Reports/
