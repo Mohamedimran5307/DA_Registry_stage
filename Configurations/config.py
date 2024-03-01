@@ -7,26 +7,35 @@ from dotenv import load_dotenv
 import os
 import imaplib
 
-load_dotenv()
-
 
 class Testdata:
-    # Load environment variables from .env file
-    load_dotenv()
-    print("Test")
+
     # CHROME_EXECUTABLE_PATH = "/Users/shaikmohamedimran/Desktop/D/Web drivers/chromedriver"
     # print("IMRAN",CHROME_EXECUTABLE_PATH)
+    # current_directory = os.getcwd()
+    # # print(current_directory)
+
+    # # Get the value of the POLICY environment variable
+    # final_directory = os.getenv("CHROME_EXECUTABLE_PATH")
+
+    # # Construct the absolute path to the file
+    # CHROME_EXECUTABLE_PATH = os.path.join(current_directory, f"{final_directory}")
+    # # CHROME_EXECUTABLE_PATH = os.environ.get("CHROME_EXECUTABLE_PATH")
+
+     # Load environment variables from .env file
+    load_dotenv()
+    
+    print("Environment variables loaded.")
+
+    # Get the current directory
     current_directory = os.getcwd()
-    # print(current_directory)
 
-    # Get the value of the POLICY environment variable
-    final_directory = os.getenv("CHROME_EXECUTABLE_PATH")
+    # Get the path to ChromeDriver from environment variables
+    chrome_executable_path_env = os.getenv("CHROME_EXECUTABLE_PATH")
 
-    # file_resources_path = "File_Resources"
-
-    # Construct the absolute path to the file
-    CHROME_EXECUTABLE_PATH = os.path.join(current_directory, f"{final_directory}")
-    # CHROME_EXECUTABLE_PATH = os.environ.get("CHROME_EXECUTABLE_PATH")
+    # Construct the absolute path if needed or use the direct path
+    CHROME_EXECUTABLE_PATH = os.path.join(current_directory, chrome_executable_path_env) if chrome_executable_path_env else chrome_executable_path_env
+    
     BASEURL = "https://stage.digiext.org/"
     USER_NAME = "national@digitalgreen.org"
     PASSWORD = "@gmail.com"
