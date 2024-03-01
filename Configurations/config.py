@@ -31,10 +31,10 @@ class Testdata:
     current_directory = os.getcwd()
 
     # Get the path to ChromeDriver from environment variables
-    chrome_executable_path_env = os.getenv("CHROME_EXECUTABLE_PATH")
+    final_directory = os.getenv("CHROME_EXECUTABLE_PATH")
 
     # Construct the absolute path if needed or use the direct path
-    CHROME_EXECUTABLE_PATH = os.path.join(current_directory, chrome_executable_path_env) if chrome_executable_path_env else chrome_executable_path_env
+    CHROME_EXECUTABLE_PATH = os.path.join(current_directory, f"{final_directory}")
     
     BASEURL = "https://stage.digiext.org/"
     USER_NAME = "national@digitalgreen.org"
