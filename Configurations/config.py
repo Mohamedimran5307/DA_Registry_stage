@@ -29,6 +29,7 @@ class Testdata:
 
     # Get the current directory
     current_directory = os.getcwd()
+    print("path",current_directory)
 
     # Get the path to ChromeDriver from environment variables
     final_directory = os.getenv("CHROME_EXECUTABLE_PATH")
